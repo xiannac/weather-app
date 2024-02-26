@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather</title>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Playpen+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <form id="search-box">
+          <input
+            type="text"
+            placeholder="Search City"
+            id="searchCity"
+            autocomplete="off"
+            autofocus="on"
+          />
+          <input type="submit" value="Search" id="submitBox" />
+        </form>
+        <h2>---</h2>
+      </h1>
+      <h3></h3>
+      <h4>Humidity: 87%, Wind: 7.2km/h</h4>
+      <div class="currentWeather">
+        <img id="currentImg" src="images/sun.png" width="190" />
+        <br />
+        <div id="current"></div>
+      </div>
+      <div class="grid">
+        <div class="col">
+          <p class="weather">
+            Sun
+            <br />
+            <img class="first" src="images/rain.png" width="45" />
+            <br /><br />
+            47°F
+          </p>
+        </div>
+
+        <div class="col">
+          <p class="weather">
+            Mon
+            <br />
+            <img class="second" src="images/cloudy.png" width="45" />
+            <br /><br />
+            45°F
+          </p>
+        </div>
+
+        <div class="col">
+          <p class="weather">
+            Tue
+            <br />
+            <img class="third" src="images/sun.png" width="45" />
+            <br /><br />
+            43°F
+          </p>
+        </div>
+
+        <div class="col">
+          <p class="weather">
+            Wed
+            <br />
+            <img class="fourth" src="images/cloudy.png" width="45" />
+            <br />
+            <br />
+            49°F
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="script.js"></script>
