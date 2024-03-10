@@ -24,23 +24,24 @@
   <body>
     <div class="container">
       <h1>
-        <header>
-          <form id="search-box">
-            <input
-              type="text"
-              placeholder="Search City"
-              id="searchCity"
-              autocomplete="off"
-              autofocus="on"
-              required
-            />
-            <input type="submit" value="Search" id="submitBox" />
-          </form>
-        </header>
+        <form id="search-box">
+          <input
+            type="text"
+            placeholder="Search City"
+            id="searchCity"
+            autocomplete="off"
+            autofocus="on"
+            required
+          />
+          <input type="submit" value="Search" id="submitBox" />
+        </form>
+
         <h2>---</h2>
       </h1>
       <h3></h3>
-      <h4>Humidity: 87%, Wind: 7.2km/h</h4>
+      <h4 id="humidity"></h4>
+      <h4 id="wind"></h4>
+      <h4 id="description"></h4>
       <div class="currentWeather">
         <img id="currentImg" src="images/sun.png" width="190" />
         <br />
