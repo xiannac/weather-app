@@ -1,42 +1,41 @@
-//To make the Date appear.
-let now = new Date();
-
-let date = now.getDate();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-
-let h3 = document.querySelector("h3");
-h3.innerHTML = `${day} ${month} ${date} ,${hours}:${minutes}`;
-
-//Display temperature.
-//
-function displayTemp(response) {
-  let tempElement = document.querySelector("#current");
+//Display all elements of the city searched.
+function displayElements(response) {
+  //City
   let cityElement = document.querySelector("#searchCity");
-
   cityElement.innerHTML = response.data.city;
 
+  //Temperature
+  let tempElement = document.querySelector("#current");
   let temperature = Math.round(response.data.temperature.current);
   tempElement.innerHTML = `${temperature}°`;
+
+  //Humidity
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `Humidity:${response.data.temperature.humidity}%`;
+
+  //Weather description
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = `Weather condition:${response.data.condition.description}`;
+
+  //Wind Speed
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `Wind:${response.data.wind.speed}mph`;
+
+  //Time
+  let timeElement = document.querySelector("h3");
+  let date = new Date(response.data.time * 1000);
+  timeElement.innerHTML = formatDate(date);
+}
+
+//Date formula
+function formatDate(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+
+  return `${day},${hours}:${minutes}`;
 }
 
 //The api address.
@@ -44,7 +43,7 @@ function searchCity(city) {
   let apiKey = "6dc2ff988bo9e47td8b8fab65e339a00";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=6dc2ff988bo9e47td8b8fab65e339a00&units=imperial`;
 
-  axios.get(apiUrl).then(displayTemp);
+  axios.get(apiUrl).then(displayElements);
 }
 //What makes what is types in the search box appear in the "h2".
 function searchBox(event) {
