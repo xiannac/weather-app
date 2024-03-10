@@ -25,8 +25,11 @@ function displayElements(response) {
   let timeElement = document.querySelector("h3");
   let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = formatDate(date);
-}
 
+  //icon
+  let iconElement = document.querySelector("#currentImg");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}"/>`;
+}
 //Date formula
 function formatDate(date) {
   let hours = date.getHours();
@@ -34,6 +37,10 @@ function formatDate(date) {
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   return `${day},${hours}:${minutes}`;
 }
