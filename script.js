@@ -64,3 +64,5 @@ function searchBox(event) {
 //calling forth the searchBox function.
 let findCity = document.querySelector("#search-box");
 findCity.addEventListener("submit", searchBox);
+
+searchCity("New york");
