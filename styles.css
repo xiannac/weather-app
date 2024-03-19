@@ -69,8 +69,9 @@ body {
 }
 
 #searchCity {
+  border:2px solid #E19BAE;
   border-radius: 10px;
-  color: black;
+  color: #463B43;
   background-color: #e29aae;
   position: relative;
   left: 35px;
@@ -115,8 +116,9 @@ body {
   );
 }
 #submitBox {
+  border:2px solid #E19BAE;
   border-radius: 10px;
-  color: #111f2b;
+  color: #463B43;
   background-color: #e29aae;
 
   clip-path: polygon(
@@ -166,7 +168,7 @@ h2 {
   position: relative;
   left: 30px;
   bottom: 15px;
-  font-size: 35px;
+  font-size: 33px;
 }
 h3 {
   position: relative;
@@ -195,6 +197,7 @@ h4 {
   text-align: center;
   opacity: 80;
   right:21px;
+  
 
 }
 .currentWeather {
@@ -208,36 +211,40 @@ display:block;
 }
 
 
-.grid {
+#forecast {
   padding:0px 0px 5px 0px;
   display: grid;
   margin: 10px 0;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 2px;
   position: relative;
   bottom: 65px;
   left: 0px;
   background-color: #7F4866;}
 
-  .first{
+  .weather-forecast-icon{
     right:2px;
+    font-size: 40px;
+    position: relative;
+    top:3px;
   }
 
-  .second{
-    right:2px;
+  .weather-forecast-date{
+    font-size: 20px;
+    position: relative;
+    top:4px;
   }
-  
-  .third{
-    right:2px;
+.weather-forecast-temps{
+  font-size:12px;
+  position: relative;
+  top:5px;
+}
+  .weather-forecast-temp-low{
+    color:#F2D9E7 ;
+    opacity: .8;
   }
 
-  .fourth{
-    right:2px;
-  }
-
-  
-
-.col {
+.weather-forecast-day {
   text-align: center;
   background-color: #914A6A;
   opacity: 300;
