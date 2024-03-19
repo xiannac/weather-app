@@ -29,6 +29,8 @@ function displayElements(response) {
   //icon
   let iconElement = document.querySelector("#currentImg");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}"/>`;
+
+  getForecast(response.data.city);
 }
 //Date formula
 function formatDate(date) {
@@ -66,6 +68,12 @@ let findCity = document.querySelector("#search-box");
 findCity.addEventListener("submit", searchBox);
 
 searchCity("New york");
+
+function getForecast(city) {
+  let apiKey = "6dc2ff988bo9e47td8b8fab65e339a00";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios(apiUrl).then(displayForecast);
+}
 
 function displayForecast() {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
