@@ -66,3 +66,25 @@ let findCity = document.querySelector("#search-box");
 findCity.addEventListener("submit", searchBox);
 
 searchCity("New york");
+
+function displayForecast() {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml += `
+<div class="weather-forecast-day">      
+  <div class="weather-forecast-date">${day}</div>   
+    <div class="weather-forecast-icon">🌧</div>    
+      <div class="weather-forecast-temps">         
+        <span class="weather-forecast-temp-high">47°F</span>   
+         <span class="weather-forecast-temp-low">25°F</span>      
+      </div>     
+ </div>
+  `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+displayForecast();
