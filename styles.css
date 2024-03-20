@@ -161,14 +161,14 @@ body {
   );
   position: relative;
   left: 10px;
-  top: 0px;
+  top: -1px;
 }
 
 h2 {
   position: relative;
   left: 30px;
   bottom: 15px;
-  font-size: 33px;
+  font-size: 31px;
 }
 h3 {
   position: relative;
@@ -195,15 +195,19 @@ h4 {
 #currentImg {
   position: relative;
   text-align: center;
-  opacity: 80;
-  right:21px;
+  opacity: 100;
+  left:190px;
+  display:flex;
+  width:180px;
+  height:180px;
+  
   
 
 }
 .currentWeather {
   position: relative;
 text-align: center;
-bottom:60px;
+bottom:90px;
 display:block;
   font-size: 40px;
   left:30px;
@@ -235,7 +239,7 @@ display:block;
     top:4px;
   }
 .weather-forecast-temps{
-  font-size:12px;
+  font-size:13.5px;
   position: relative;
   top:5px;
 }
