@@ -1,7 +1,7 @@
 body {
-  background-image: url("images/pink city.jpeg");
+  background: url("images/pink city.jpeg") no-repeat center fixed;
   background-size: cover;
-  background-repeat: no-repeat;
+  
   background-color: #213045;
   color: white;
   font-family: "Press Start 2P", system-ui;
